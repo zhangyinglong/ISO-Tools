@@ -9,13 +9,10 @@
 /* Begin PBXBuildFile section */
 		B8E1539A164F46DC001E4A51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E15399164F46DC001E4A51 /* Foundation.framework */; };
 		B8E153A8164F46DD001E4A51 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E153A7164F46DD001E4A51 /* SenTestingKit.framework */; };
-		B8E153AA164F46DD001E4A51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E153A9164F46DD001E4A51 /* UIKit.framework */; };
 		B8E153AB164F46DD001E4A51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E15399164F46DC001E4A51 /* Foundation.framework */; };
 		B8E153AE164F46DD001E4A51 /* libISO-Tools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E15396164F46DC001E4A51 /* libISO-Tools.a */; };
 		B8E153B4164F46DD001E4A51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8E153B2164F46DD001E4A51 /* InfoPlist.strings */; };
 		B8E153B7164F46DD001E4A51 /* ISO_ToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E153B6164F46DD001E4A51 /* ISO_ToolsTests.m */; };
-		B8E153CA164F49F9001E4A51 /* NSData+Crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E153C8164F49F9001E4A51 /* NSData+Crypto.h */; };
-		B8E153CB164F49F9001E4A51 /* NSData+Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E153C9164F49F9001E4A51 /* NSData+Crypto.m */; };
 		B8E153CD164F4A76001E4A51 /* ISO-Tools-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B8E153CC164F4A76001E4A51 /* ISO-Tools-Prefix.pch */; };
 /* End PBXBuildFile section */
 
@@ -34,13 +31,10 @@
 		B8E15399164F46DC001E4A51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B8E153A6164F46DD001E4A51 /* ISO-ToolsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ISO-ToolsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E153A7164F46DD001E4A51 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B8E153A9164F46DD001E4A51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B8E153B1164F46DD001E4A51 /* ISO-ToolsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISO-ToolsTests-Info.plist"; sourceTree = "<group>"; };
 		B8E153B3164F46DD001E4A51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B8E153B5164F46DD001E4A51 /* ISO_ToolsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISO_ToolsTests.h; sourceTree = "<group>"; };
 		B8E153B6164F46DD001E4A51 /* ISO_ToolsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISO_ToolsTests.m; sourceTree = "<group>"; };
-		B8E153C8164F49F9001E4A51 /* NSData+Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Crypto.h"; path = "src/NSData+Crypto.h"; sourceTree = SOURCE_ROOT; };
-		B8E153C9164F49F9001E4A51 /* NSData+Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Crypto.m"; path = "src/NSData+Crypto.m"; sourceTree = SOURCE_ROOT; };
 		B8E153CC164F4A76001E4A51 /* ISO-Tools-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ISO-Tools-Prefix.pch"; path = "src/ISO-Tools-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -58,7 +52,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E153A8164F46DD001E4A51 /* SenTestingKit.framework in Frameworks */,
-				B8E153AA164F46DD001E4A51 /* UIKit.framework in Frameworks */,
 				B8E153AB164F46DD001E4A51 /* Foundation.framework in Frameworks */,
 				B8E153AE164F46DD001E4A51 /* libISO-Tools.a in Frameworks */,
 			);
@@ -91,7 +84,6 @@
 			children = (
 				B8E15399164F46DC001E4A51 /* Foundation.framework */,
 				B8E153A7164F46DD001E4A51 /* SenTestingKit.framework */,
-				B8E153A9164F46DD001E4A51 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,8 +91,6 @@
 		B8E1539B164F46DC001E4A51 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				B8E153C8164F49F9001E4A51 /* NSData+Crypto.h */,
-				B8E153C9164F49F9001E4A51 /* NSData+Crypto.m */,
 				B8E1539C164F46DC001E4A51 /* Supporting Files */,
 			);
 			name = src;
@@ -141,7 +131,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E153CA164F49F9001E4A51 /* NSData+Crypto.h in Headers */,
 				B8E153CD164F4A76001E4A51 /* ISO-Tools-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E153CB164F49F9001E4A51 /* NSData+Crypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +284,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -313,7 +301,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

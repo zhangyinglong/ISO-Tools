@@ -7,6 +7,7 @@
 //
 
 #import "ISO_ToolsTests.h"
+#import "ISO-Tools.h"
 
 @implementation ISO_ToolsTests
 
@@ -23,6 +24,18 @@
     
     [super tearDown];
 }
+
+- (void)testBase64
+{
+    NSString *str = @"zhangyinglong";
+    debugLog(@"str = %@", str);
+    NSString *baseEncodeStr = [[str dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+    debugLog(@"baseEncodeStr = %@", baseEncodeStr);
+    NSString *baseDecodeStr = [[NSString alloc] initWithData:[NSData dataFromBase64String:baseEncodeStr] encoding:NSUTF8StringEncoding];
+    debugLog(@"baseDecodeStr = %@", baseDecodeStr);
+    STAssertEqualObjects(str, baseDecodeStr, @"testBase64 failed!");
+}
+
 
 - (void)testExample
 {

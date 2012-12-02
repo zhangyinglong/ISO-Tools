@@ -14,6 +14,17 @@
 		B8E153B4164F46DD001E4A51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8E153B2164F46DD001E4A51 /* InfoPlist.strings */; };
 		B8E153B7164F46DD001E4A51 /* ISO_ToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E153B6164F46DD001E4A51 /* ISO_ToolsTests.m */; };
 		B8E153CD164F4A76001E4A51 /* ISO-Tools-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B8E153CC164F4A76001E4A51 /* ISO-Tools-Prefix.pch */; };
+		EE8B50CF166AE4D1008E5B25 /* MacroUtis.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50C3166AE4D1008E5B25 /* MacroUtis.h */; };
+		EE8B50D0166AE4D1008E5B25 /* NSData+3DES.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50C4166AE4D1008E5B25 /* NSData+3DES.h */; };
+		EE8B50D1166AE4D1008E5B25 /* NSData+3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B50C5166AE4D1008E5B25 /* NSData+3DES.m */; };
+		EE8B50D2166AE4D1008E5B25 /* NSData+AES.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50C6166AE4D1008E5B25 /* NSData+AES.h */; };
+		EE8B50D3166AE4D1008E5B25 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B50C7166AE4D1008E5B25 /* NSData+AES.m */; };
+		EE8B50D4166AE4D1008E5B25 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50C8166AE4D1008E5B25 /* NSData+Base64.h */; };
+		EE8B50D5166AE4D1008E5B25 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B50C9166AE4D1008E5B25 /* NSData+Base64.m */; };
+		EE8B50D6166AE4D1008E5B25 /* NSData+MD5Hash.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50CA166AE4D1008E5B25 /* NSData+MD5Hash.h */; };
+		EE8B50D7166AE4D1008E5B25 /* NSData+MD5Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B50CB166AE4D1008E5B25 /* NSData+MD5Hash.m */; };
+		EE8B50D8166AE4D1008E5B25 /* VersionCompare.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50CC166AE4D1008E5B25 /* VersionCompare.h */; };
+		EE8B50D9166AE4D1008E5B25 /* ISO-Tools.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50CE166AE4D1008E5B25 /* ISO-Tools.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +47,17 @@
 		B8E153B5164F46DD001E4A51 /* ISO_ToolsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISO_ToolsTests.h; sourceTree = "<group>"; };
 		B8E153B6164F46DD001E4A51 /* ISO_ToolsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISO_ToolsTests.m; sourceTree = "<group>"; };
 		B8E153CC164F4A76001E4A51 /* ISO-Tools-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ISO-Tools-Prefix.pch"; path = "src/ISO-Tools-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		EE8B50C3166AE4D1008E5B25 /* MacroUtis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtis.h; sourceTree = "<group>"; };
+		EE8B50C4166AE4D1008E5B25 /* NSData+3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+3DES.h"; sourceTree = "<group>"; };
+		EE8B50C5166AE4D1008E5B25 /* NSData+3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+3DES.m"; sourceTree = "<group>"; };
+		EE8B50C6166AE4D1008E5B25 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		EE8B50C7166AE4D1008E5B25 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		EE8B50C8166AE4D1008E5B25 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		EE8B50C9166AE4D1008E5B25 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		EE8B50CA166AE4D1008E5B25 /* NSData+MD5Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5Hash.h"; sourceTree = "<group>"; };
+		EE8B50CB166AE4D1008E5B25 /* NSData+MD5Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5Hash.m"; sourceTree = "<group>"; };
+		EE8B50CC166AE4D1008E5B25 /* VersionCompare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionCompare.h; sourceTree = "<group>"; };
+		EE8B50CE166AE4D1008E5B25 /* ISO-Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISO-Tools.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +113,8 @@
 		B8E1539B164F46DC001E4A51 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EE8B50C2166AE4D1008E5B25 /* Common */,
+				EE8B50CD166AE4D1008E5B25 /* include */,
 				B8E1539C164F46DC001E4A51 /* Supporting Files */,
 			);
 			name = src;
@@ -124,6 +148,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EE8B50C2166AE4D1008E5B25 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EE8B50C3166AE4D1008E5B25 /* MacroUtis.h */,
+				EE8B50C4166AE4D1008E5B25 /* NSData+3DES.h */,
+				EE8B50C5166AE4D1008E5B25 /* NSData+3DES.m */,
+				EE8B50C6166AE4D1008E5B25 /* NSData+AES.h */,
+				EE8B50C7166AE4D1008E5B25 /* NSData+AES.m */,
+				EE8B50C8166AE4D1008E5B25 /* NSData+Base64.h */,
+				EE8B50C9166AE4D1008E5B25 /* NSData+Base64.m */,
+				EE8B50CA166AE4D1008E5B25 /* NSData+MD5Hash.h */,
+				EE8B50CB166AE4D1008E5B25 /* NSData+MD5Hash.m */,
+				EE8B50CC166AE4D1008E5B25 /* VersionCompare.h */,
+			);
+			name = Common;
+			path = src/Common;
+			sourceTree = SOURCE_ROOT;
+		};
+		EE8B50CD166AE4D1008E5B25 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EE8B50CE166AE4D1008E5B25 /* ISO-Tools.h */,
+			);
+			name = include;
+			path = src/include;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -132,6 +183,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E153CD164F4A76001E4A51 /* ISO-Tools-Prefix.pch in Headers */,
+				EE8B50CF166AE4D1008E5B25 /* MacroUtis.h in Headers */,
+				EE8B50D0166AE4D1008E5B25 /* NSData+3DES.h in Headers */,
+				EE8B50D2166AE4D1008E5B25 /* NSData+AES.h in Headers */,
+				EE8B50D4166AE4D1008E5B25 /* NSData+Base64.h in Headers */,
+				EE8B50D6166AE4D1008E5B25 /* NSData+MD5Hash.h in Headers */,
+				EE8B50D8166AE4D1008E5B25 /* VersionCompare.h in Headers */,
+				EE8B50D9166AE4D1008E5B25 /* ISO-Tools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8B50D1166AE4D1008E5B25 /* NSData+3DES.m in Sources */,
+				EE8B50D3166AE4D1008E5B25 /* NSData+AES.m in Sources */,
+				EE8B50D5166AE4D1008E5B25 /* NSData+Base64.m in Sources */,
+				EE8B50D7166AE4D1008E5B25 /* NSData+MD5Hash.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +332,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -282,7 +344,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
@@ -294,12 +356,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
@@ -341,6 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ISO-Tools-Prefix.pch";
 				INFOPLIST_FILE = "ISO-ToolsTests/ISO-ToolsTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -356,6 +419,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ISO-Tools-Prefix.pch";
 				INFOPLIST_FILE = "ISO-ToolsTests/ISO-ToolsTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

@@ -35,3 +35,35 @@
 
 #define TT_FIX_CATEGORY_BUG(name) @interface TT_FIX_CATEGORY_BUG_##name @end \
                                     @implementation TT_FIX_CATEGORY_BUG_##name @end
+
+
+//#define SETBITMASK(value, pos, isZero) \
+//do { \
+//    @try { \
+//        __typeof__(value) v = (value); \
+//        __typeof__(pos) p = (pos); \
+//        __typeof__(isZero) z = (isZero); \
+//        if ( z ) { \
+//            v &= ~(1 << p); \
+//        } \
+//        else { \
+//            v |= (1 << p); \
+//        } \
+//        return v; \
+//    } \
+//    @catch (id anException) { \
+//        debugLog(@"Catch a exception : %@, beacause of %@, in %@ %@", [anException name], [anException reason], __FILE__, __LINE__); \
+//    } \
+//} while (0)
+//
+//#define BITMASK(value, pos) \
+//do { \
+//    @try { \
+//        __typeof__(value) v = (value); \
+//        __typeof__(pos) p = (pos); \
+//        return v & (1 << p);\
+//    } \
+//    @catch (id anException) { \
+//        debugLog(@"Catch a exception : %@, beacause of %@, in %@ %@", [anException name], [anException reason], __FILE__, __LINE__); \
+//    } \
+//} while (0)

@@ -14,6 +14,9 @@
 		B8E153B4164F46DD001E4A51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8E153B2164F46DD001E4A51 /* InfoPlist.strings */; };
 		B8E153B7164F46DD001E4A51 /* ISO_ToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E153B6164F46DD001E4A51 /* ISO_ToolsTests.m */; };
 		B8E153CD164F4A76001E4A51 /* ISO-Tools-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B8E153CC164F4A76001E4A51 /* ISO-Tools-Prefix.pch */; };
+		EE4A92C3166B9265000986EA /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = EE4A92C1166B9265000986EA /* Utility.h */; };
+		EE4A92C4166B9265000986EA /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A92C2166B9265000986EA /* Utility.m */; };
+		EE4A92C7166B9A5E000986EA /* SynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = EE4A92C6166B9A5E000986EA /* SynthesizeSingleton.h */; };
 		EE8B50CF166AE4D1008E5B25 /* MacroUtis.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50C3166AE4D1008E5B25 /* MacroUtis.h */; };
 		EE8B50D0166AE4D1008E5B25 /* NSData+3DES.h in Headers */ = {isa = PBXBuildFile; fileRef = EE8B50C4166AE4D1008E5B25 /* NSData+3DES.h */; };
 		EE8B50D1166AE4D1008E5B25 /* NSData+3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B50C5166AE4D1008E5B25 /* NSData+3DES.m */; };
@@ -47,6 +50,9 @@
 		B8E153B5164F46DD001E4A51 /* ISO_ToolsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISO_ToolsTests.h; sourceTree = "<group>"; };
 		B8E153B6164F46DD001E4A51 /* ISO_ToolsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISO_ToolsTests.m; sourceTree = "<group>"; };
 		B8E153CC164F4A76001E4A51 /* ISO-Tools-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ISO-Tools-Prefix.pch"; path = "src/ISO-Tools-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		EE4A92C1166B9265000986EA /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		EE4A92C2166B9265000986EA /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		EE4A92C6166B9A5E000986EA /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		EE8B50C3166AE4D1008E5B25 /* MacroUtis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtis.h; sourceTree = "<group>"; };
 		EE8B50C4166AE4D1008E5B25 /* NSData+3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+3DES.h"; sourceTree = "<group>"; };
 		EE8B50C5166AE4D1008E5B25 /* NSData+3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+3DES.m"; sourceTree = "<group>"; };
@@ -160,6 +166,9 @@
 				EE8B50C9166AE4D1008E5B25 /* NSData+Base64.m */,
 				EE8B50CA166AE4D1008E5B25 /* NSData+MD5Hash.h */,
 				EE8B50CB166AE4D1008E5B25 /* NSData+MD5Hash.m */,
+				EE4A92C6166B9A5E000986EA /* SynthesizeSingleton.h */,
+				EE4A92C1166B9265000986EA /* Utility.h */,
+				EE4A92C2166B9265000986EA /* Utility.m */,
 				EE8B50CC166AE4D1008E5B25 /* VersionCompare.h */,
 			);
 			name = Common;
@@ -190,6 +199,8 @@
 				EE8B50D6166AE4D1008E5B25 /* NSData+MD5Hash.h in Headers */,
 				EE8B50D8166AE4D1008E5B25 /* VersionCompare.h in Headers */,
 				EE8B50D9166AE4D1008E5B25 /* ISO-Tools.h in Headers */,
+				EE4A92C3166B9265000986EA /* Utility.h in Headers */,
+				EE4A92C7166B9A5E000986EA /* SynthesizeSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +305,7 @@
 				EE8B50D3166AE4D1008E5B25 /* NSData+AES.m in Sources */,
 				EE8B50D5166AE4D1008E5B25 /* NSData+Base64.m in Sources */,
 				EE8B50D7166AE4D1008E5B25 /* NSData+MD5Hash.m in Sources */,
+				EE4A92C4166B9265000986EA /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

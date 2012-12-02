@@ -25,6 +25,17 @@
     [super tearDown];
 }
 
+- (void)testBitSet
+{
+    UInt64 value = 0;
+    int flag = 1;
+    for (int i = 0; i < sizeof(UInt64)*8; i++) {
+        value = [Utility setBitMask:value andPos:i andFlag:flag];
+        STAssertTrue(flag == [Utility bitMask:value andPos:i], @"error occur!");
+    }
+    STAssertTrue(UINT64_MAX == value, @"error occur!");
+}
+
 - (void)testBase64
 {
     NSString *str = @"zhangyinglong";

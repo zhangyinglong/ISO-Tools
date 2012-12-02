@@ -10,8 +10,10 @@
 
 // Common
 #import "MacroUtis.h"
+#import "Utility.h"
 #import "VersionCompare.h"
 #import "NSData+3DES.h"
 #import "NSData+AES.h"
 #import "NSData+Base64.h"
 #import "NSData+MD5Hash.h"
+

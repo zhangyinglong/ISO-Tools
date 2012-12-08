@@ -10,10 +10,14 @@
 
 @interface NSData (Base64)
 
-+ (NSData *) dataFromBase64String:(NSString *)aString;
++ (NSData *) dataFromBase64UTF8String:(NSString *)aString;
 
-- (NSString *) base64EncodedString;
+- (NSString *) base64EncodedUTF8String;
 
-- (NSString *) base64EncodedStringWithSeparateLines:(BOOL)separateLines;
+- (NSString *) base64EncodedUTF8StringWithSeparateLines:(BOOL)separateLines;
+
++ (NSData *) dataWithBase64ASCIIString:(NSString *)aString;
+
+- (NSString *) base64EncodedASCIIString;
 
 @end

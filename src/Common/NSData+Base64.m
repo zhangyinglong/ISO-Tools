@@ -9,15 +9,14 @@
 #import "NSData+Base64.h"
 #import "MacroUtis.h"
 #import <CommonCrypto/CommonCrypto.h>
-
-static unsigned char base64EncodeLookup[65] =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+                                              
+static unsigned char base64EncodeLookup[65] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 #define xx 65
 #define BINARY_UNIT_SIZE 3
 #define BASE64_UNIT_SIZE 4
 
-static unsigned char base64DecodeLookup[256] =
+static unsigned char base64UTF8DecodeTable[256] =
 {
     xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx,
     xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx,
@@ -35,6 +34,26 @@ static unsigned char base64DecodeLookup[256] =
     xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx,
     xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx,
     xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx,
+};
+
+static const short base64ASCIIDecodeTable[256] =
+{
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -1, -1, -2, -1, -1, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-1, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, 62, -2, -2, -2, 63,
+	52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -2, -2, -2, -2, -2, -2,
+	-2,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14,
+	15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -2, -2, -2, -2, -2,
+	-2, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+	41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2
 };
 
 //
@@ -59,8 +78,7 @@ void *NewBase64Decode(const char *inputBuffer,
 		length = strlen(inputBuffer);
 	}
     
-	size_t outputBufferSize =
-    ((length+BASE64_UNIT_SIZE-1) / BASE64_UNIT_SIZE) * BINARY_UNIT_SIZE;
+	size_t outputBufferSize = ((length+BASE64_UNIT_SIZE-1) / BASE64_UNIT_SIZE) * BINARY_UNIT_SIZE;
 	unsigned char *outputBuffer = (unsigned char *)malloc(outputBufferSize);
     
 	size_t i = 0;
@@ -74,7 +92,7 @@ void *NewBase64Decode(const char *inputBuffer,
 		size_t accumulateIndex = 0;
 		while (i < length)
 		{
-			unsigned char decode = base64DecodeLookup[inputBuffer[i++]];
+			unsigned char decode = base64UTF8DecodeTable[inputBuffer[i++]];
 			if (decode != xx)
 			{
 				accumulated[accumulateIndex] = decode;
@@ -145,8 +163,7 @@ char *NewBase64Encode(const void *buffer,
     * BASE64_UNIT_SIZE;
 	if (separateLines)
 	{
-		outputBufferSize +=
-        (outputBufferSize / OUTPUT_LINE_LENGTH) * CR_LF_SIZE;
+		outputBufferSize += (outputBufferSize / OUTPUT_LINE_LENGTH) * CR_LF_SIZE;
 	}
     
 	//
@@ -235,7 +252,7 @@ char *NewBase64Encode(const void *buffer,
 
 @implementation NSData (Base64)
 
-+ (NSData *) dataFromBase64String:(NSString *)aString
++ (NSData *) dataFromBase64UTF8String:(NSString *)aString
 {
     NSData *data = [aString dataUsingEncoding:NSUTF8StringEncoding];
 	size_t outputLength;
@@ -245,28 +262,95 @@ char *NewBase64Encode(const void *buffer,
 	return result;
 }
 
-- (NSString *) base64EncodedString
+- (NSString *) base64EncodedUTF8String
 {
     size_t outputLength;
 	char *outputBuffer = NewBase64Encode([self bytes], [self length], true, &outputLength);
     
-	NSString *result = [[[NSString alloc] initWithBytes:outputBuffer
-                                                 length:outputLength
-                                               encoding:NSUTF8StringEncoding] autorelease];
+	NSString *result = [[NSString alloc] initWithBytes:outputBuffer
+                                                length:outputLength
+                                              encoding:NSUTF8StringEncoding];
     free(outputBuffer);
-	return result;
+	return [result autorelease];
 }
 
-- (NSString *) base64EncodedStringWithSeparateLines:(BOOL)separateLines
+- (NSString *) base64EncodedUTF8StringWithSeparateLines:(BOOL)separateLines
 {
     size_t outputLength;
 	char *outputBuffer = NewBase64Encode([self bytes], [self length], separateLines, &outputLength);
     
-	NSString *result = [[[NSString alloc] initWithBytes:outputBuffer
-                                                 length:outputLength
-                                               encoding:NSUTF8StringEncoding] autorelease];
+	NSString *result = [[NSString alloc] initWithBytes:outputBuffer
+                                                length:outputLength
+                                              encoding:NSUTF8StringEncoding];
 	free(outputBuffer);
-	return result;
+	return [result autorelease];
+}
+
+// Adapted from http://www.cocoadev.com/index.pl?BaseSixtyFour
+- (NSString *)base64EncodedASCIIString
+{
+	const uint8_t *input = self.bytes;
+	NSInteger length = self.length;
+    
+	NSMutableData *data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
+    uint8_t *output = (uint8_t *)data.mutableBytes;
+    
+    for (NSInteger i = 0; i < length; i += 3) {
+        NSInteger value = 0;
+        for (NSInteger j = i; j < (i + 3); j++) {
+            value <<= 8;
+            
+            if (j < length) {
+                value |= (0xFF & input[j]);
+            }
+        }
+        
+        NSInteger index = (i / 3) * 4;
+        output[index + 0] = base64EncodeLookup[(value >> 18) & 0x3F];
+        output[index + 1] = base64EncodeLookup[(value >> 12) & 0x3F];
+        output[index + 2] = (i + 1) < length ? base64EncodeLookup[(value >> 6) & 0x3F] : '=';
+        output[index + 3] = (i + 2) < length ? base64EncodeLookup[(value >> 0) & 0x3F] : '=';
+    }
+
+    return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
+}
+
+// Adapted from http://www.cocoadev.com/index.pl?BaseSixtyFour
++ (NSData *)dataWithBase64ASCIIString:(NSString *)aString
+{
+	const char *string = [aString cStringUsingEncoding:NSASCIIStringEncoding];
+	NSInteger inputLength = aString.length;
+    
+	if (string == NULL/* || inputLength % 4 != 0*/) {
+		return nil;
+	}
+    
+	while (inputLength > 0 && string[inputLength - 1] == '=') {
+		inputLength--;
+	}
+    
+	NSInteger outputLength = inputLength * 3 / 4;
+	NSMutableData* data = [NSMutableData dataWithLength:outputLength];
+	uint8_t *output = data.mutableBytes;
+    
+	NSInteger inputPoint = 0;
+	NSInteger outputPoint = 0;
+	while (inputPoint < inputLength) {
+		char i0 = string[inputPoint++];
+		char i1 = string[inputPoint++];
+		char i2 = inputPoint < inputLength ? string[inputPoint++] : 'A'; /* 'A' will decode to \0 */
+		char i3 = inputPoint < inputLength ? string[inputPoint++] : 'A';
+        
+		output[outputPoint++] = (base64ASCIIDecodeTable[i0] << 2) | (base64ASCIIDecodeTable[i1] >> 4);
+		if (outputPoint < outputLength) {
+			output[outputPoint++] = ((base64ASCIIDecodeTable[i1] & 0xf) << 4) | (base64ASCIIDecodeTable[i2] >> 2);
+		}
+		if (outputPoint < outputLength) {
+			output[outputPoint++] = ((base64ASCIIDecodeTable[i2] & 0x3) << 6) | base64ASCIIDecodeTable[i3];
+		}
+	}
+    
+	return data;
 }
 
 @end
